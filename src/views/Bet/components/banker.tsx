@@ -6,15 +6,13 @@ import store from "@/store";
 import { Communicator } from "@/utils/tool";
 
 const HoverG = styled.g`
-  cursor: pointer;
-  position: relative;
   .textLight {
     display: none;
   }
 
   &.active {
     cursor: pointer;
-    fill: rgb(246, 94, 94, .4);
+    fill: rgb(246, 94, 94, 0.4);
 
     .textLight {
       display: block;
@@ -64,7 +62,7 @@ const Banker = () => {
         id="text"
         fill="#AB2B20"
       />
-      <ChipStack category={BetType.BANKER} x={350} y={170}/>
+      <ChipStack category={BetType.BANKER} x={350} y={170} />
     </HoverG>
   );
 };

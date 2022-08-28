@@ -7,18 +7,20 @@ import { Throttle } from "@/utils";
 import FlvPlayer from "@/components/flvPlayer";
 import SlideModal from "@/components/slideModal";
 import Cover from "./components/cover";
-import PlayerDouble from "./components/playerDouble";
-import BankerDouble from "./components/bankerDouble";
 import LeftSide from "./components/leftSide";
 import RightSide from "./components/rightSide";
 import BetTable from "./components/betTable";
-import Player from "./components/player";
-import Banker from "./components/banker";
 import RoadMap from "./components/roadMap";
 import TablePick from "./components/tablePick";
 import CasinoPick from "./components/casinoPick";
+import {
+  Banker,
+  Player,
+  Tie,
+  BankerDouble,
+  PlayerDouble,
+} from "./components/deskSection";
 import { roundData } from "./data";
-import Tie from "./components/tie";
 import MenuBar from "./components/menu-bar";
 import lockIcon from "@/assets/images/bet/bg_table.jpeg";
 import QuickBet from "./components/quickBet";
@@ -92,7 +94,7 @@ const Index = () => {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <Container scale={scale}>
-        <LiveVideo source={m3u8} />
+        <FlvPlayer />
         {/* <FlvPlayer/> */}
         <svg
           data-v-a9f5d69a=""

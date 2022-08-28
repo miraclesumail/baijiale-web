@@ -97,7 +97,7 @@ const FlvPlayer = () => {
   }, [] )
 
   return (
-    <canvas id="video1" width={200} height={200}></canvas>
+    <canvas id="video1" width={300} height={200}></canvas>
 
   )
 }
