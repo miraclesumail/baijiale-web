@@ -26,7 +26,7 @@ const Wrap: FC<Props> = ({ width, height, align = "top", children }) => {
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
 
-  useEventListener("resize", new Throttle(onResize, 30).run);
+  useEventListener("resize", new Throttle(onResize, 60).run);
 
   function onResize() {
     console.log("onResize");

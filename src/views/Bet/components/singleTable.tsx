@@ -2,6 +2,7 @@ import { Column, Row } from "@/components/flex";
 import React from "react";
 import styled from "styled-components";
 import CircleProgress from "@/components/circleProgress";
+import CircleProgress1 from "@/components/circleProgress1";
 import RoadMap from "@/components/roadMap";
 import { roundData } from "../data";
 import casino from "@/assets/images/bet/casino.svg";

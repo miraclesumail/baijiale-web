@@ -94,7 +94,7 @@ const Index = () => {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <Container scale={scale}>
-        <FlvPlayer />
+        <LiveVideo source={m3u8} />
         {/* <FlvPlayer/> */}
         <svg
           data-v-a9f5d69a=""

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Row, Column } from "@/components/flex";
-import CircleProgress from '@/components/circleProgress'
+import CircleProgress from "@/components/circleProgress";
+import CircleProgress1 from "@/components/circleProgress1";
 import { useSelector, useDispatch } from "react-redux";
 import { resetChipsStack } from "@/store/slices/bet.slice";
 import ChipContainer from "./chipContainer";
@@ -64,19 +65,23 @@ const Operation = styled.div`
 
 const MenuBar = () => {
   const dispatch = useDispatch();
+  const [duration, setDuration] = useState(`${Date.now()}_20`);
 
   return (
     <MenuWrap>
       <DeskInfo {...{ justify: "space-between" }}>
         {/* <Circle>10</Circle> */}
-        <CircleProgress
+        <CircleProgress1
           {...{
             width: 46,
             radius: 20,
-            valuesArr: [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+            duration,
             callback: () => {
-              console.log('停止下注')
-            }
+              console.log("停止下注");
+              setTimeout(() => {
+                setDuration(`${Date.now()}_20`);
+              }, 3000);
+            },
           }}
         />
         <DeskDetail {...{ justify: "space-between" }}>
