@@ -1,6 +1,6 @@
 import CircleProgress from "@/components/circleProgress";
 import { Column, Row } from "@/components/flex";
-import { drawBigEyeWay, Options } from "@/utils/dewdrop";
+import { drawBigEyeWay, Options } from "@/utils/dewdrop11";
 import { formatResultList, initCanvas } from "@/utils/tool";
 import classnames from "classnames";
 import React, {

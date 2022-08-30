@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Row, Column } from "@/components/flex";
 import CircleProgress from "@/components/circleProgress";
-import { drawBigEyeWay, Options } from "@/utils/dewdrop";
+import { drawBigEyeWay, Options } from "@/utils/dewdrop11";
 import { formatResultList, initCanvas } from "@/utils/tool";
 import { roundData as dataSource } from "../data";
 

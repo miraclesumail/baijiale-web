@@ -10,7 +10,7 @@ import left from "@/assets/images/bet/leftIcon.svg";
 import { useState } from "react";
 import { roundData } from "@/views/Bet/data";
 import { formatResultList, initCanvas } from "@/utils/tool";
-import { drawBigEyeWay, Options } from "@/utils/dewdrop";
+import { drawBigEyeWay, Options } from "@/utils/dewdrop11";
 
 const Container = styled(Row)`
   position: fixed;

@@ -6,7 +6,7 @@ import {
   drawBigEyeWay,
   drawSmallWay,
   drawCockroachWay,
-} from "@/utils/dewdrop";
+} from "@/utils/dewdrop11";
 import { formatResultList, initCanvas } from "@/utils/tool";
 import React, { FC, useEffect, useRef, useState } from "react";
 

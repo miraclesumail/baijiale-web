@@ -32,6 +32,10 @@ interface InitData {
 interface Options {
   rows: number
   columns: number
+  lineWidth: 1
+  lineColor: string
+  cellWidth: number
+  cellHeight: number
   textMap: {
     banker: string
     player: string
@@ -42,13 +46,7 @@ interface Options {
     player: string
     tie: string
   }
-  lineWidth?: number // 线条宽度 默认1
-  cellWidth: number
-  cellHeight: number
-  pairRadius?: number // 对子圆直径 默认值 珠盘路3 大路1.5
   skipOddLine?: true
-  gridLineColor: string
-  gridLineWidth: number
 }
 
 interface GetBullseyeOptions {
@@ -178,47 +176,6 @@ export function drawSmallWay (ctx: CanvasRenderingContext2D, initList: InitData[
 // 蟑螂路
 export function drawCockroachWay (ctx: CanvasRenderingContext2D, initList: InitData[], options: Options, origin: [number, number] = [0, 0]) {
   canvas.drawCockroachWay(ctx, initList, options, origin)
-}
-
-// 初始化画布
-export function initCanvas (id: string, gridWidth: number, gridHeight: number, useRem: boolean = true) {
-  const canvas = document.getElementById(id) as HTMLCanvasElement
-  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
-
-  let dpr = window.devicePixelRatio
-  dpr = Math.ceil(dpr)
-  dpr = dpr > 2 ? dpr : 4
-
-  canvas.width = gridWidth * dpr
-  canvas.height = gridHeight * dpr
-  canvas.style.setProperty('width', useRem ? `${gridWidth / 100}rem` : `${gridWidth}px`)
-  canvas.style.setProperty('height', useRem ? `${gridHeight / 100}rem` : `${gridHeight}px`)
-
-  ctx.scale(dpr, dpr)
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  return ctx
-}
-
-// 初始化画布 自动计算宽高
-export function initCanvasAuto (id: string, options: Options, useRem: boolean = false) {
-  const { rows, columns, cellWidth, cellHeight, gridLineWidth } = options
-  const canvas = document.getElementById(id) as HTMLCanvasElement
-  const gridWidth = columns * cellWidth + gridLineWidth
-  const gridHeight = rows * cellHeight + gridLineWidth
-  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
-
-  let dpr = window.devicePixelRatio
-  dpr = Math.ceil(dpr)
-  dpr = dpr > 2 ? dpr : 4
-
-  canvas.width = gridWidth * dpr
-  canvas.height = gridHeight * dpr
-  canvas.style.setProperty('width', useRem ? `${gridWidth / 100}rem` : `${gridWidth}px`)
-  canvas.style.setProperty('height', useRem ? `${gridHeight / 100}rem` : `${gridHeight}px`)
-
-  ctx.scale(dpr, dpr)
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  return ctx
 }
 
 export type { InitData, Options }

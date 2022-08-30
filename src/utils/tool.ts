@@ -3,7 +3,7 @@ import {
   createEntityAdapter,
   EntityAdapter,
 } from "@reduxjs/toolkit";
-import { InitData } from "@/utils/dewdrop";
+import { InitData } from "@/utils/dewdrop11";
 
 export const DESIGN_WIDTH = 414;
 let windowW: number | null = null;

@@ -68,31 +68,33 @@ function init(initList: InitData[]) {
     tie: "#4ea950",
   };
 
-  const dishWayOptions: Options = {
+  const dishWayOptions: any = {
     rows: 6,
     columns: 10,
-    lineWidth: 1,
-    lineColor: "rgba(211, 175, 110, 0.3)",
+    gridLineWidth: 1,
+    gridLineColor: "rgba(211, 175, 110, 0.3)",
     cellWidth: 40,
     cellHeight: 40,
+    pairRadius: 5,
     textMap,
     colorMap,
   };
   const bigWayOptions: Options = {
     rows: 6,
     columns: 24,
-    lineWidth: 1,
-    lineColor: "rgba(211, 175, 110, 0.3)",
+    gridLineWidth: 1,
+    gridLineColor: "rgba(211, 175, 110, 0.3)",
     cellWidth: 20,
     cellHeight: 20,
+    pairRadius: 5,
     textMap,
     colorMap,
   };
   const bigEyeOptions: Options = {
     rows: 6,
     columns: 48,
-    lineWidth: 1,
-    lineColor: "rgba(211, 175, 110, 0.3)",
+    gridLineWidth: 1,
+    gridLineColor: "rgba(211, 175, 110, 0.3)",
     cellWidth: 10,
     cellHeight: 10,
     skipOddLine: true,
@@ -102,8 +104,8 @@ function init(initList: InitData[]) {
   const smallWayOptions: Options = {
     rows: 6,
     columns: 24,
-    lineWidth: 1,
-    lineColor: "rgba(211, 175, 110, 0.3)",
+    gridLineWidth: 1,
+    gridLineColor: "rgba(211, 175, 110, 0.3)",
     cellWidth: 10,
     cellHeight: 10,
     skipOddLine: true,
@@ -113,8 +115,8 @@ function init(initList: InitData[]) {
   const cockroachWayOptions: Options = {
     rows: 6,
     columns: 24,
-    lineWidth: 1,
-    lineColor: "rgba(211, 175, 110, 0.3)",
+    gridLineWidth: 1,
+    gridLineColor: "rgba(211, 175, 110, 0.3)",
     cellWidth: 10,
     cellHeight: 10,
     skipOddLine: true,
@@ -125,9 +127,9 @@ function init(initList: InitData[]) {
   const canvasWidth =
     dishWayOptions.cellWidth * dishWayOptions.columns +
     bigWayOptions.cellWidth * bigWayOptions.columns +
-    dishWayOptions.lineWidth;
+    dishWayOptions.gridLineWidth;
   const canvasHeight =
-    dishWayOptions.cellHeight * dishWayOptions.rows + dishWayOptions.lineWidth;
+    dishWayOptions.cellHeight * dishWayOptions.rows + dishWayOptions.gridLineWidth;
   const ctx = initCanvas("canvas", false, canvasWidth, canvasHeight);
 
   const dishWayWidth = dishWayOptions.cellWidth * dishWayOptions.columns;
